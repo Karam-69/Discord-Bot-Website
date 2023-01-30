@@ -1,0 +1,147 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mox - Bot Command</title>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Start Header -->
+        <div class="header">
+            <div class="logo">LOGO</div>
+            <div class="nav">
+                <ul>
+                    <a href="../index.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="#">
+                        <li>Support</li>
+                    </a>
+                    <a href="#">
+                        <li>Server</li>
+                    </a>
+                    <a href=""><button class="login-btn">LOGIN</button></a>
+                </ul>
+            </div>
+        </div>
+        <!-- End Header -->
+
+        <!-- Start container -->
+        <div class="container">
+
+            <h1 class="title">Commands</h1>
+
+            <div class="tablist">
+
+                <ul role="tablist" class="nav">
+                    <li class="nav-pills all" id="active">All</li>
+                    <li class="nav-pills general">General</li>
+                    <li class="nav-pills music">Music</li>
+                    <li class="nav-pills moderation">Moderation</li>
+                </ul>
+
+            </div>
+
+
+            <div class="commands">
+                <div class="command general all">
+                    <h2 class="title-explain"><span>$</span>rank</h2>
+                    <h3 class="explain">- View your rank card or someone else's in the server.</h3>
+                </div>
+
+                <div class="command music all">
+                    <h2 class="title-explain"><span>$</span>play</h2>
+                    <h3 class="explain">- Add a song to queue and plays it.</h3>
+                </div>
+
+                <div class="command moderation all">
+                    <h2 class="title-explain"><span>$</span>ban</h2>
+                    <h3 class="explain">- Bans a member.</h3>
+                </div>
+            </div>
+
+
+
+        </div>
+        <!-- End container -->
+
+
+    </div>
+
+    <p class="footer">© 2022 All Rights Reserved To <a href="https://github.com/Karam-69">Mohamed Karam.</a></p>
+
+
+    <div class="soon">
+        <h1>Mobile Ddevices Will Be Available Soon.</h1>
+    </div>
+
+    <script>
+        var tab = document.getElementsByClassName("nav-pills");
+        for (var i = 0; i < tab.length; i++) {
+
+            tab[i].addEventListener("click", function () {
+                var actived = document.getElementById("active");
+                actived.removeAttribute("id", "");
+                this.setAttribute("id", "active");
+
+                stats("all", this)
+                stats("general", this)
+                stats("music", this)
+                stats("moderation", this)
+
+
+
+                function stats(mode , actived) {
+                    if (actived.classList.contains(mode)) {
+
+                        var cmd = document.getElementsByClassName("command");
+
+                        for (var i = 0; i < cmd.length; i++) {
+
+                            if (cmd[i].classList.contains(mode)) {
+                                cmd[i].style.display = "block";
+                            } else {
+
+                                cmd[i].style.display = "none";
+                            }
+
+                        }
+
+                    }
+
+                }
+
+
+            })
+        }
+    </script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script>
+        document.onready = () => $("body").niceScroll()
+
+    </script>
+
+</body>
+
+</html>
+
+
+<!-- 
+
+        tab[i].addEventListener("click", function() {
+
+    var actived = document.getElementsByClassName("active");
+        console.log(actived)
+    actived.classList.remove("active")
+
+
+  });
+
+ -->
